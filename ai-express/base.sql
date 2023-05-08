@@ -9,8 +9,10 @@ CREATE TABLE IF NOT EXISTS article (
     titre varchar(255),
     date timestamp not null default CURRENT_TIMESTAMP,
     description varchar(255),
+    image varchar(255),
     contenu text
 );
 
+alter table article add column image varchar(255);
 
 INSERT INTO admin VALUES (default,'r.idealy.ma@gmail.com','1234');

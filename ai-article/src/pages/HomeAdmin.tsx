@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import dreamImg from "../assets/images/dream.png";
 
-export default function Home() {
+export default function HomeAdmin() {
 
     // alert(dreamImg);
 

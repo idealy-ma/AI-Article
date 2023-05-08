@@ -24,5 +24,6 @@ model article {
   date DateTime @default(now())
   description String
   contenu String
+  image String?
   @@map(name: "article")
 }

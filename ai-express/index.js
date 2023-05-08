@@ -1,7 +1,8 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const session = require('express-session');
 const cors = require('cors');
+
+const bodyParser = require('body-parser');
+// const session = require('express-session');
 const userRoutes = require('./routes/userRoutes');
 const articleRoutes = require('./routes/articleRoutes');
 
@@ -12,10 +13,19 @@ app.use(cors())
 
 // configure middleware
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 
 // configure routes
 app.use('/users', userRoutes);
 app.use('/articles', articleRoutes);
+
+// static
+app.use(express.static('images'));
+
+app.get('/images/:filename', (req, res) => {
+  const { filename } = req.params;
+  res.sendFile(`${__dirname}/images/${filename}`);
+});
 
 
 // configure error handling
