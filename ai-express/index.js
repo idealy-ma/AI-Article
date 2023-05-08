@@ -10,12 +10,6 @@ const app = express();
 
 app.use(cors())
 
-app.use(session({
-    secret: 'adxyygz',
-    resave: false,
-    saveUninitialized: true
-}));
-
 // configure middleware
 app.use(bodyParser.json());
 

@@ -5,7 +5,7 @@ const { requireAuth } = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 router.post('/', requireAuth ,createArticle);
-router.get('/', requireAuth ,findArticle);
+router.get('/' ,findArticle);
 // router.get('/profile', requireAuth, (req, res) => {
 //     res.json({value:"Mety eh"});
 // });
