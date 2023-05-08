@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
+const articleRoutes = require('./routes/articleRoutes');
+
 
 const app = express();
 
@@ -19,6 +21,8 @@ app.use(bodyParser.json());
 
 // configure routes
 app.use('/users', userRoutes);
+app.use('/articles', articleRoutes);
+
 
 // configure error handling
 app.use((err, req, res, next) => {

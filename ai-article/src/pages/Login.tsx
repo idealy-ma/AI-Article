@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Container,Form } from '../../node_modules/react-bootstrap/esm/index';
 import { useNavigate } from "../../node_modules/react-router-dom/dist/index";
 import './Login.css';
 
@@ -20,20 +20,13 @@ function Login() {
             },
             body:JSON.stringify({email:email, password:password})
         }).then((response)=>{
-            console.log("Success")
             return response.json();
-        },(error)=>{
-            console.log("Error : " + JSON.stringify(error));
         }).then((value)=>{
-            if(value!== undefined){
-                console.log(JSON.stringify(value));
-                localStorage.setItem("token",value.token);
-                localStorage.setItem("userId",JSON.stringify(value.userId));
-                navigate('/home');
-            }
-            else {
-                setError("Erreur");
-            }
+            localStorage.setItem("token",value.token);
+            localStorage.setItem("userId",JSON.stringify(value.userId));
+            navigate('/home');
+        }).catch(()=>{
+            setError("Verifier votre email ou mot de passe")
         });
     };
 

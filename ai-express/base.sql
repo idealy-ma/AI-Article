@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS admin(
 CREATE TABLE IF NOT EXISTS article (
     id serial primary key,
     titre varchar(255),
-    date date default CURRENT_DATE,
+    date timestamp not null default CURRENT_TIMESTAMP,
     description varchar(255),
     contenu text
 );

@@ -1,6 +1,11 @@
 import { useEffect } from "react";
+import Header from "../components/Header";
+import NavBar from "../components/NavBar";
+import dreamImg from "../assets/images/dream.png";
 
 export default function Home() {
+
+    // alert(dreamImg);
 
     useEffect(()=>{
         fetch('http://localhost:3000/users/profile',{
@@ -20,7 +25,10 @@ export default function Home() {
     },[]);
     return (
         <div>
-            
+            <NavBar />
+            <Header 
+                imageBg={dreamImg}
+            />
         </div>
     );
 }

@@ -4,13 +4,6 @@ const prisma = new PrismaClient();
 
 const secret = 'idealy';
 
-// exports.createUser = async (req, res) => {
-//   const user = await prisma.user.create({
-//     data: req.body,
-//   });
-//   res.json(user);
-// };
-
 exports.createUser = async (req, res) => {
   const user = await prisma.user.create({
     data: req.body,
@@ -24,7 +17,6 @@ exports.authenticateAdmin = async (req, res) => {
     const user = await prisma.userAdmin.findMany({ where: { email } });
 
     if (!user || user[0].password !== password) {
-        console.log(JSON.stringify(user[0].password)+" "+password);
         res.status(401).send('Invalid email or password');
     } else {
         const token = jwt.sign({ userId: user[0].id }, secret);

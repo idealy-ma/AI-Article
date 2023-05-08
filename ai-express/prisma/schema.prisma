@@ -20,8 +20,8 @@ model userAdmin {
 
 model article {
   id    Int     @id @default(autoincrement())
-  title String
-  date DateTime
+  titre String
+  date DateTime @default(now())
   description String
   contenu String
   @@map(name: "article")

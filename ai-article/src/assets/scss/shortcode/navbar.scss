@@ -1,0 +1,16 @@
+.i-navbar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    width: 100%;
+    color: $white;
+    display: flex;
+    justify-content: space-around;
+
+    .i-navlink{
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+}
