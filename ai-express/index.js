@@ -9,7 +9,7 @@ const app = express();
 app.use(cors())
 
 app.use(session({
-    secret: 'my-secret-key',
+    secret: 'adxyygz',
     resave: false,
     saveUninitialized: true
 }));

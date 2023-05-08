@@ -6,8 +6,7 @@ const router = express.Router();
 
 router.post('/login', authenticateAdmin);
 router.get('/profile', requireAuth, (req, res) => {
-    console.log(req.session);
-    res.json(req.session.user);
+    res.json({value:"Mety eh"});
 });
 
 module.exports = router;
