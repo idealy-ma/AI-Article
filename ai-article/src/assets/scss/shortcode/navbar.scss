@@ -1,16 +1,35 @@
-.i-navbar{
+@mixin nav-bar(){
     position: fixed;
-    top: 0px;
-    left: 0px;
-    padding: 10px;
+    top: 0;
+    left: 0;
     width: 100%;
-    color: $white;
+    padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
 
-    .i-navlink{
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
+.i-navbar{
+    @include nav-bar();
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+
+    &-scrolled{
+        @include nav-bar();
+        background-color: #333;
+        transition: background-color 0.5s ease-in-out;
+        opacity: 1;
+        color: white;
+        z-index: 3000000;
+
     }
+
+    *{
+        margin: none;
+    }
+}
+
+.i-navlink{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
 }
