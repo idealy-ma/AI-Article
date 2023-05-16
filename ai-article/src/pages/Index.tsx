@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import ArticleCard from "../components/ArticleCard";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
+import SideBar from "../components/SideBar";
+import TableCard from "../components/TableCard";
 
 export default function Index() {
     const [articles,setArticles] = useState<any[]>();
@@ -20,11 +22,9 @@ export default function Index() {
     },[]);
     return(
         <>
+            <SideBar active={""}/>
             <NavBar />
-            <Header imageBg=""/>
-            {
-                articles?.map((value)=> <ArticleCard key={value.id} article={value} />)
-            }  
+            <TableCard data={articles} columns={["id","titre","description","date","contenu"]}></TableCard>
         </>
     )
 }

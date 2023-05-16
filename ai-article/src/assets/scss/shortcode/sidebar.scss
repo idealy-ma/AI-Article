@@ -1,6 +1,33 @@
 .side-left{
     position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
+    left: 10px;
+    top: 2.5vh;
+    height: 95vh;
+    padding: 10px;
+    background-color: $bg;
+    color: $white;
+    border-radius: 20px;
+
+    .nav-brand{
+        text-align: center;
+        padding: 10px;
+    }
+
+    .link{
+        margin-top: 35px;
+        a{
+            color: $white;
+        }
+        .icon{
+            padding: 10px;
+            // margin: 5px 5px;
+            transition: 300ms;
+            text-align: center;
+            border-radius: 10px;
+            &:hover{
+                background-color: $bg-hover;
+                cursor: pointer ;
+            }
+        }
+    }
 }
