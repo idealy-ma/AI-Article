@@ -1,18 +1,58 @@
-CREATE TABLE IF NOT EXISTS admin(
-    id serial primary key,
-    email varchar(200) unique not null,
-    password varchar(255) not null
-);
+CREATE OR REPLACE VIEW v_laptop AS (
+    SELECT
+        laptop.id,
+        laptop.ramid,
+        ram.quantite ram,
+        laptop.processeurid,
+        v_processeur.fournisseurprocid,
+        v_processeur.coeur,
+        v_processeur.generation,
+        v_processeur.frequence,
+        v_processeur.reference refprocesseur,
+        v_processeur.fournisseur,
+        laptop.disquedurid,
+        v_disquedur.typedurid,
+        v_disquedur.typedur,
+        v_disquedur.quantite disquedur,
+        laptop.referenceid,
+        v_laptop_ref.marque,
+        v_laptop_ref.reference reflaptop,
+        v_laptop_ref.marqueid,
+        laptop.ecranid,
+        ecran.inch
+    FROM laptop
+    JOIN ram
+    ON laptop.ramid = ram.id
+    JOIN v_processeur
+    ON laptop.processeurid = v_processeur.id
+    JOIN v_disquedur 
+    ON laptop.disquedurid = v_disquedur.id
+    JOIN v_laptop_ref
+    ON laptop.referenceid = v_laptop_ref.id
+    JOIN ecran
+    ON ecran.id = laptop.ecranid
+)
 
-CREATE TABLE IF NOT EXISTS article (
-    id serial primary key,
-    titre varchar(255),
-    date timestamp not null default CURRENT_TIMESTAMP,
-    description varchar(255),
-    image varchar(255),
-    contenu text
-);
+CREATE OR REPLACE VIEW v_processeur AS (
+    SELECT processeur.*,
+        fournisseurproc.nom fournisseur
+    FROM processeur
+    JOIN fournisseurproc
+    ON processeur.fournisseurprocid = fournisseurproc.id
+)
 
-alter table article add column image varchar(255);
+CREATE OR REPLACE VIEW v_disquedur AS (
+    SELECT disquedur.*,
+        typedur.label typedur
+    FROM disquedur
+    JOIN typedur
+    ON disquedur.typedurid = typedur.id
+)
 
-INSERT INTO admin VALUES (default,'r.idealy.ma@gmail.com','1234');
+CREATE OR REPLACE VIEW v_laptop_ref AS (
+    SELECT reference.*,
+        marque.nom marque
+    FROM reference
+    JOIN marque
+    ON reference.marqueid = marque.id
+)

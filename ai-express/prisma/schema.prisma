@@ -29,6 +29,66 @@ model fournisseurproc{
   nom String
 }
 
+model ecran{
+  id Int @id @default(autoincrement())
+  inch Int
+}
+
+model disquedur{
+  id Int @id @default(autoincrement())
+  quantite Int
+  typedurid Int
+}
+
+model typedur{
+  id Int @id @default(autoincrement())
+  label String
+}
+
+model reference{
+  id Int @id @default(autoincrement())
+  reference String
+  marqueid Int
+}
+
+model marque{
+  id Int @id @default(autoincrement())
+  nom String
+}
+
+model laptop{
+  id Int @id @default(autoincrement())
+  referenceid Int
+  ramid Int
+  processeurid Int
+  disquedurid Int
+  ecranid Int
+}
+
+model laptopInfo{
+  id Int @id @default(autoincrement())
+  ramid Int
+  ram Int
+  processeurid Int
+  fournisseurprocid Int
+  coeur Int
+  generation Int
+  frequence Int
+  refprocesseur String
+  fournisseur String
+  disquedurid Int
+  typedurid Int
+  typedur Int
+  disquedur Int
+  referenceid Int
+  marque String
+  reflaptop String
+  marqueid Int
+  ecranid Int
+  inch Int
+  @@map(name: "v_laptop")
+}
+
 // model userAdmin {
 //   id    Int     @id @default(autoincrement())
 //   email String  @unique
