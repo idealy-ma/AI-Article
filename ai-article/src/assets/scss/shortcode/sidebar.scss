@@ -1,12 +1,14 @@
 .side-left{
     position: fixed;
-    left: 10px;
-    top: 2.5vh;
-    height: 95vh;
-    padding: 10px;
+    // left: 10px;
+    // top: 2.5vh;
+    width: $space;
+    // width: fit-content;
+    height: 100%;
+    // padding: 10px;
     background-color: $bg;
     color: $white;
-    border-radius: 20px;
+    // border-radius: 10px;
 
     .nav-brand{
         text-align: center;
@@ -17,12 +19,17 @@
         margin-top: 35px;
         a{
             color: $white;
+            text-decoration: none;
+            span{
+                margin-left: 10px;
+            }
         }
         .icon{
             padding: 10px;
-            // margin: 5px 5px;
+            margin: 10;
             transition: 300ms;
-            text-align: center;
+            // text-decoration: none;
+            // text-align: center;
             border-radius: 10px;
             &:hover{
                 background-color: $bg-hover;
@@ -30,4 +37,9 @@
             }
         }
     }
+}
+
+.other-side{
+    margin-left: calc($space + 20px);
+    width: calc(100% - $space);
 }

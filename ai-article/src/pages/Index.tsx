@@ -20,11 +20,18 @@ export default function Index() {
             console.log(error)
         });
     },[]);
+
     return(
         <>
-            <SideBar active={""}/>
-            <NavBar />
-            <TableCard data={articles} columns={["id","titre","description","date","contenu"]}></TableCard>
+            <div className="d-flex">
+                <div>
+                    <SideBar active={""}/>
+                </div>
+                <div className="overflow-auto other-side">
+                    <NavBar />
+                    <TableCard data={articles} columns={["id","titre","description","date","contenu"]}></TableCard>
+                </div>
+            </div>
         </>
     )
 }

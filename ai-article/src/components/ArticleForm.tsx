@@ -53,16 +53,17 @@ export default function ArticleForm() {
             <Form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="titre">Titre</label>
-                    <input type="text" name="titre" id="titre" onChange={(e:any)=>setTitre(e.target.value)}/>
+                    <input type="text" className='form-control' name="titre" id="titre" onChange={(e:any)=>setTitre(e.target.value)}/>
                 </div>
+                
                 <div className="form-group">
                     <label htmlFor="description">Description</label>
-                    <input type="text" name="description" id="description" onChange={(e:any)=>setDescription(e.target.value)}/>
+                    <input type="text" className='form-control' name="description" id="description" onChange={(e:any)=>setDescription(e.target.value)}/>
                 </div>
 
                 <div className='form-group'>
                     <label htmlFor="image">Upload image</label>
-                    <input type="file" onChange={handleFileChange} />
+                    <input type="file" className='form-control' onChange={handleFileChange} />
                 </div>
                 <div className='form-group'>
                     <label>

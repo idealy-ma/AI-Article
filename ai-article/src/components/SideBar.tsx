@@ -1,7 +1,8 @@
 import viteSvg from "../../public/vite.svg";
-import ShowChartIcon from '@mui/icons-material/ShowChart';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import AddIcon from '@mui/icons-material/Add';
 import { Link } from "../../node_modules/react-router-dom/dist/index";
 
 
@@ -18,13 +19,16 @@ export default function SideBar(props : SideBarProps) {
             </div>
             <div className="link">
                 <div className="icon">
-                    <Link to="#"><ShowChartIcon></ShowChartIcon></Link>
+                    <Link to="/"><DashboardIcon/>  <span>Dashboard</span></Link>
                 </div>
                 <div className="icon">
-                    <Link to="#"><FactCheckOutlinedIcon></FactCheckOutlinedIcon></Link>
+                    <Link to="/article-add"><AddIcon/>  <span>Add Material</span></Link>
                 </div>
                 <div className="icon">
-                    <Link to="/login"><LogoutOutlinedIcon></LogoutOutlinedIcon></Link>
+                    <Link to="#"><FactCheckOutlinedIcon/>  <span>Liste</span></Link>
+                </div>
+                <div className="icon">
+                    <Link to="/login"><LogoutOutlinedIcon/>  <span>Deconnection</span></Link>
                 </div>
             </div>
         </div>   
