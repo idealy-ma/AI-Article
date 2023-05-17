@@ -10,20 +10,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model userAdmin {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  password String
-  @@map(name: "admin")
-
+model ram{
+  id Int @id @default(autoincrement())
+  quantite Int
 }
 
-model article {
-  id    Int     @id @default(autoincrement())
-  titre String
-  date DateTime @default(now())
-  description String
-  contenu String
-  image String?
-  @@map(name: "article")
+model processeur{
+  id Int @id @default(autoincrement())
+  fournisseurprocid Int
+  coeur Int
+  generation Int
+  frequence Int
+  reference String
 }
+
+model fournisseurproc{
+  id Int @id @default(autoincrement())
+  nom String
+}
+
+// model userAdmin {
+//   id    Int     @id @default(autoincrement())
+//   email String  @unique
+//   password String
+//   @@map(name: "admin")
+
+// }
+
+// model article {
+//   id    Int     @id @default(autoincrement())
+//   titre String
+//   date DateTime @default(now())
+//   description String
+//   contenu String
+//   image String?
+//   @@map(name: "article")
+// }
