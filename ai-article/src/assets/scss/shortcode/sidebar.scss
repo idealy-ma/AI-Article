@@ -12,10 +12,13 @@
 
     .nav-brand{
         text-align: center;
+        // margin: 12px 0px;
         padding: 10px;
     }
 
     .link{
+        padding: 15px;
+        font-size: 13px;
         margin-top: 35px;
         a{
             color: $white;
@@ -41,5 +44,9 @@
 
 .other-side{
     margin-left: calc($space + 20px);
-    width: calc(100% - $space);
+    width: calc(100% - ($space + 20px));
+    padding: {
+        left: 30px;
+        right: 30px;
+    };
 }

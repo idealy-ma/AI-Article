@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 // const articleRoutes = require('./routes/articleRoutes');
 const referencesRoutes = require('./routes/references.routes');
 const laptopRoutes = require('./routes/laptop.routes')
+const pointDeVenteRoutes = require('./routes/pointvente.routes')
 
 
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 // app.use('/articles', articleRoutes);
 app.use('/laptops', laptopRoutes);
 app.use('/references', referencesRoutes);
+app.use('/pointdeventes', pointDeVenteRoutes);
 
 
 // static

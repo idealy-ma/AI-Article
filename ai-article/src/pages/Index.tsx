@@ -9,7 +9,7 @@ export default function Index() {
     const [articles,setArticles] = useState<any[]>();
 
     useEffect(()=>{
-        fetch('http://localhost:3000/articles',{
+        fetch('http://localhost:3000/laptops',{
             method:'GET'
         }).then((response)=>{
             return response.json();
@@ -29,7 +29,7 @@ export default function Index() {
                 </div>
                 <div className="overflow-auto other-side">
                     <NavBar />
-                    <TableCard data={articles} columns={["id","titre","description","date","contenu"]}></TableCard>
+                    <TableCard data={articles} columns={["id","reference","ram", "memoire"]}></TableCard>
                 </div>
             </div>
         </>

@@ -1,10 +1,8 @@
-// import ArticleForm from "../components/ArticleForm";
-
-import ArticleForm from "../components/ArticleForm";
 import NavBar from "../components/NavBar";
 import SideBar from "../components/SideBar";
+import StorePointForm from "../components/StorePointForm";
 
-export default function ArticleAdd() {
+export default function AddPointStore(){
     return(
         <>
             <div className="d-flex">
@@ -13,11 +11,9 @@ export default function ArticleAdd() {
                 </div>
                 <div className="overflow-auto other-side">
                     <NavBar />
-                    <ArticleForm />
-                    {/* <TableCard data={articles} columns={["id","titre","description","date","contenu"]}></TableCard> */}
+                    <StorePointForm />
                 </div>
             </div>
         </>
-        
     )
 }

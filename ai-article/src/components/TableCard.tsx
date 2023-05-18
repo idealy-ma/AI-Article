@@ -28,7 +28,7 @@ const TableCard: React.FC<TableProps> = ({ data, columns, rowsPerPage, length })
 
     return (
         <div>
-            <table className="table table-responsive table-striped">
+            <table className="table table-responsive table-striped table-bordered">
                 <thead>
                     <tr>
                     {columns?.map((column, index) => (

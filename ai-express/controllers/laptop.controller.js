@@ -3,6 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 exports.createLaptop = async (req, res) => {
+    // console.log(req.body);
     const laptop = await prisma.laptop.create({
         data: req.body,
     });
@@ -24,7 +25,7 @@ exports.deleteLaptop = async (req, res) => {
 }
 
 exports.listLaptop = async (req, res) => {
-    const laptop = await prisma.$queryRaw`SELECT * FROM v_laptop`;
+    const laptop = await prisma.$queryRaw`SELECT * FROM laptop`;
     res.json(laptop);
 }
 
