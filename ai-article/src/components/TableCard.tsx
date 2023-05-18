@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "../../node_modules/react-router-dom/dist/index";
 
 interface TableProps {
     data: any[];
@@ -39,8 +40,14 @@ const TableCard: React.FC<TableProps> = ({ data, columns, rowsPerPage, length })
                 <tbody>
                     {data?.map((row, rowIndex) => (
                     <tr key={rowIndex}>
-                        {columns?.map((column, columnIndex) => (
-                        <td key={columnIndex}>{row[column]}</td>
+                        {columns.map((column, columnIndex) => (
+                            <td key={columnIndex}>
+                                {column === 'link' ? (
+                                    <Link to={row.link}>{row['icon']}</Link>
+                                ) : (
+                                    row[column]
+                                )}
+                            </td>
                         ))}
                     </tr>
                     ))}

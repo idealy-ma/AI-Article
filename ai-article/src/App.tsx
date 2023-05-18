@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import AddPointStore from "./pages/AddPointStore";
 import StoreList from "./pages/StoreList";
 import UserAdd from "./pages/users/UserAdd";
+import UserList from "./pages/users/UserList";
+import UserAffect from "./pages/users/UserAffect";
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
           <Route path="/store-list" element={<StoreList />}/>
           {/** user route */}
           <Route path="/user-add" element={<UserAdd />}/>
+          <Route path="/user-list" element={<UserList />}/>
+          <Route path="/user-affect/:id" element={<UserAffect />}/>
+          {/** stock route*/}
+          <Route path="/stock-buy" element={<UserList />}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -56,3 +56,6 @@ CREATE OR REPLACE VIEW v_laptop_ref AS (
     JOIN marque
     ON reference.marqueid = marque.id
 )
+
+ALTER TABLE utilisateur
+ALTER COLUMN pointdeventeid DROP NOT NULL;

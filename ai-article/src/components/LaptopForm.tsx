@@ -1,21 +1,8 @@
-// import CKEditor from '@ckeditor/ckeditor5-react';
-// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { useEffect, useState } from 'react';
-import JoditEditor from 'jodit-react';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { Marque } from '../models/Marque';
 import { Processeur } from '../models/Processeur';
 import { TypeDur } from '../models/TypeDur';
-
-// "reference":"TUF GAMING DASH15",
-// "ram":8093,
-// "processeurid":1,
-// "memoire":512,
-// "frequence":3040,
-// "ecran":15,
-// "prix":12000,
-// "typedurid":2,
-// "marqueid":1
 
 export default function LaptopForm() {
     const [reference, setReference] = useState('');

@@ -3,19 +3,21 @@ import { Form } from 'react-bootstrap';
 import { Users } from '../../models/Users';
 // import { PointDeVente } from '../models/PointDeVente';
 
-export default function UsersForm() {
-    const [nom, setNom] = useState('');  
-    const [login, setLogin] = useState('');    
-    const [password, setPassword] = useState('');    
-
+export default function BuyLaptopForm() {
+    const [laptopId, setLaptopId] = useState('');  
+    const [qte, setQte] = useState('');    
+    const [prixAchat, setPrixAchat] = useState(''); 
+    
+    // data
+    const [laptop, setLaptop] = useState();
 
     const handleSubmit = (event : any )=>{
         event.preventDefault();
 
         const data = {
-            nom: nom,
-            login: login,
-            password: password
+            laptopId: laptopId,
+            quantite: qte,
+            prixAchat: prixAchat
         }
         console.log("data : "+JSON.stringify(data));
         new Users().create(data);

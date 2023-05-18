@@ -55,6 +55,7 @@ model utilisateur{
   nom String
   login String @unique
   password String
+  pointdeventeid Int?
 }
 
 // model userAdmin {

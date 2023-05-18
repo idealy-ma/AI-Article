@@ -5,6 +5,8 @@ import StoreIcon from '@mui/icons-material/Store';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import InventoryIcon from '@mui/icons-material/Inventory';
 import { Link } from "../../node_modules/react-router-dom/dist/index";
 
 
@@ -36,6 +38,12 @@ export default function SideBar(props : SideBarProps) {
                 </div>
                 <div className="icon">
                     <Link to="/user-add"><GroupAddIcon/>  <span>Ajouter des utilisateurs</span></Link>
+                </div>
+                <div className="icon">
+                    <Link to="/user-list"><PeopleAltIcon/>  <span>Liste des utilisateurs</span></Link>
+                </div>
+                <div className="icon">
+                    <Link to="/stock-buy"><InventoryIcon/>  <span>Acheter des Laptops</span></Link>
                 </div>
                 <div className="icon">
                     <Link to="/login"><LogoutOutlinedIcon/>  <span>Deconnection</span></Link>
